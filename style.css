@@ -1,0 +1,36 @@
+body {
+    font-family: sans-serif;
+    background-color: #002b36;
+    color: #839496;
+  }
+  
+  h1 {
+    color: #93a1a1;
+  }
+  
+  form {
+    margin: 0 auto;
+    width: 300px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #93a1a1;
+    color: #839496;
+  }
+  
+  button {
+    background-color: #93a1a1;
+    color: #002b36;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 500px) {
+    form {
+      width: 100%;
+    }
+  }
+  
