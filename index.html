@@ -3,33 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>Password Generator</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <style>
-    /* Dark Mode Styles */
-    body {
-      background-color: #111;
-      color: #FFD700; /* Golden Yellow Text */
-      font-family: Monaco, Consolas, "Courier New", monospace; /* Terminal-like Font */
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Password Generator</h1>
   </header>
   <main>
-    <div class="container">
-      <h1>Password Generator</h1>
-      <p>Click the button to generate a new password:</p>
-      <form action="/" method="get">
-        <button type="submit">Generate Password</button>
-      </form>
-      <p>Your password is: <strong>{{ password }}</strong></p>      
-    </div>
+    <form action="/" method="post">
+      <input type="text" name="password" placeholder="Enter a password">
+      <button type="submit">Generate Password</button>
+    </form>
+    <script>
+      // Get the password from the form
+      const password = document.querySelector("input[name='password']").value;
 
+      // Make a request to the Python app
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", "/password");
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.send(JSON.stringify({ password }));
+
+      // Handle the response
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          // The password was generated successfully
+          const response = JSON.parse(xhr.responseText);
+          const generatedPassword = response.password;
+
+          // Display the generated password
+          document.querySelector("input[name='password']").value = generatedPassword;
+        } else {
+          // An error occurred
+          console.log("Error generating password: " + xhr.statusText);
+        }
+      };
+    </script>
   </main>
   <footer>
-    <p>Copyright © 2023 Kramerica Industries</p>
+    <p>Copyright © 2023</p>
   </footer>
 </body>
 </html>
