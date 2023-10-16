@@ -41,7 +41,7 @@ if __name__ == "__main__":
 # python password_generator.py
 
 # 1. Create an AWS Lambda function.
-# 2. Upload the password_generator.py file to the Lambda function.
+# 2. Upload the app.py file to the Lambda function.
 # 3. Configure the Lambda function to run when a HTTP request is received.
 # 4. Create an API Gateway endpoint for the Lambda function.
 # 5. Test the API Gateway endpoint.
@@ -81,103 +81,70 @@ if __name__ == "__main__":
 
 
 
+# Here are the steps on how to run the application in AWS:
 
+# Create an AWS Lambda function.
+# Upload the password_generator.py file to the Lambda function.
+# Configure the Lambda function to run when a HTTP request is received.
+# Create an API Gateway endpoint for the Lambda function.
+# Test the API Gateway endpoint.
+# Here are the detailed steps:
 
+# Go to the AWS Lambda console.
 
+# Click the "Create function" button.
 
+# Select the "Python 3.8" runtime.
 
+# Give the function a name, such as "password_generator".
 
+# Select the "Author from scratch" option.
 
+# Paste the code from the password_generator.py file into the function code editor.
 
+# Click the "Save" button.
 
+# Go to the "Configuration" tab for the Lambda function.
 
+# In the "Trigger" section, select the "HTTP" trigger.
 
+# In the "Method" section, select "POST".
 
+# Click the "Save" button.
 
+# Go to the API Gateway console.
 
+# Click the "Create API" button.
 
+# Select the "REST API" option.
 
+# Give the API a name, such as "password_generator_api".
 
+# Click the "Create" button.
 
+# In the "Actions" menu, select "Create Resource".
 
+# Give the resource a name, such as "/password".
 
+# Click the "Create" button.
 
+# In the "Actions" menu, select "Enable CORS".
 
+# In the "CORS" section, select the "Enable CORS for all origins" option.
 
+# Click the "Save" button.
 
+# In the "Method" section, select the "POST" method.
 
+# In the "Integration" section, select the "Lambda" integration.
 
+# In the "Lambda Function" field, select the "password_generator" function.
 
+# Click the "Save" button.
 
+# Test the API Gateway endpoint by sending a POST request to the following URL:
 
-
-
-
-
-Sure, I can help you with that. Here are the steps on how to run the application in AWS:
-
-Create an AWS Lambda function.
-Upload the password_generator.py file to the Lambda function.
-Configure the Lambda function to run when a HTTP request is received.
-Create an API Gateway endpoint for the Lambda function.
-Test the API Gateway endpoint.
-Here are the detailed steps:
-
-Go to the AWS Lambda console.
-
-Click the "Create function" button.
-
-Select the "Python 3.8" runtime.
-
-Give the function a name, such as "password_generator".
-
-Select the "Author from scratch" option.
-
-Paste the code from the password_generator.py file into the function code editor.
-
-Click the "Save" button.
-
-Go to the "Configuration" tab for the Lambda function.
-
-In the "Trigger" section, select the "HTTP" trigger.
-
-In the "Method" section, select "POST".
-
-Click the "Save" button.
-
-Go to the API Gateway console.
-
-Click the "Create API" button.
-
-Select the "REST API" option.
-
-Give the API a name, such as "password_generator_api".
-
-Click the "Create" button.
-
-In the "Actions" menu, select "Create Resource".
-
-Give the resource a name, such as "/password".
-
-Click the "Create" button.
-
-In the "Actions" menu, select "Enable CORS".
-
-In the "CORS" section, select the "Enable CORS for all origins" option.
-
-Click the "Save" button.
-
-In the "Method" section, select the "POST" method.
-
-In the "Integration" section, select the "Lambda" integration.
-
-In the "Lambda Function" field, select the "password_generator" function.
-
-Click the "Save" button.
-
-Test the API Gateway endpoint by sending a POST request to the following URL:
-
-Code snippet
-https://<API_ID>.execute-api.us-east-1.amazonaws.com/password
-Use code with caution. Learn more
-The response body will contain the generated password.
+# Code snippet
+# https://<API_ID>.execute-api.us-east-1.amazonaws.com/password
+# Use code with caution. Learn more
+# The response body will contain the generated password.
